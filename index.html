@@ -89,6 +89,12 @@ function slideAct(){
     }else{ //mobile 버전
         winWChk = 'mo';
     }
+    
+    //슬라이드 배열 생성
+    $(".slider").each(function(index){
+        realInx.push(0);
+        swiperArr.push(undefined);
+    })
 
     $(window).on('resize', function (){
         winW = window.innerWidth;
@@ -138,10 +144,6 @@ function slideAct(){
     
     function sliderStart(){
         $(".slider").each(function(index){
-            //슬라이드 배열 생성
-            realInx.push(0);
-            swiperArr.push(undefined);
-
             //슬라이드 초기화
             if(swiperArr[index] != undefined) {
                 swiperArr[index].destroy();
