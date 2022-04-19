@@ -82,20 +82,14 @@ function slideAct(){
     var realInx = [] //현재 페이지
     var swiperArr = [] //슬라이드 배열
 
-    //디바이스 체크
-    var winWChk = ''
-    if (window.innerWidth > 768){ //PC 버전
-        winWChk = 'pc';
-    }else{ //mobile 버전
-        winWChk = 'mo';
-    }
-    
     //슬라이드 배열 생성
     $(".slider").each(function(index){
         realInx.push(0);
         swiperArr.push(undefined);
     })
 
+    //디바이스 체크
+    var winWChk = ''
     $(window).on('resize', function (){
         winW = window.innerWidth;
         if(winWChk != 'mo' && winW <= 768){ //모바일 버전으로 전환할 때
@@ -107,8 +101,6 @@ function slideAct(){
             winWChk = 'pc';
         }
     }) 
-
-    slideList();
 
     function slideList(){
         //리스트 초기화
