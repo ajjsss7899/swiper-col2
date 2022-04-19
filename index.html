@@ -91,7 +91,7 @@ function slideAct(){
     //디바이스 체크
     var winWChk = ''
     $(window).on('load resize', function (){
-        winW = window.innerWidth;
+        var winW = window.innerWidth;
         if(winWChk != 'mo' && winW <= 768){ //모바일 버전으로 전환할 때
             slideList()
             winWChk = 'mo';
